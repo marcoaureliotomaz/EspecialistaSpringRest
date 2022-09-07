@@ -8,17 +8,17 @@ import org.springframework.stereotype.Component;
 import com.algaworks.algafood.di.modelo.Cliente;
 
 @TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
-@Profile("prod")
+@Profile("dev")
 @Component
-public class NotificadorEmail implements Notificador {
+public class NotificadorEmailMock implements Notificador {
 	
-	public  NotificadorEmail() {
-		System.out.println("Notificador Email REAL");
+	public 	 NotificadorEmailMock() {
+		System.out.println("Notificador Email MOCK");
 	}
 	
 	@Override
 	public void notificar(Cliente cliente, String mensagem) {
-		System.out.printf("Notificando %s através do e-mail %s: %s\n", 
+		System.out.printf("MOCK: Notificaria %s através do e-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 
