@@ -7,9 +7,7 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.util.List;
-
-public class ConsultaCozinhaMain {
+public class BuscaCozinhaMain {
 
     public static void main(String[] args) {
 
@@ -17,13 +15,12 @@ public class ConsultaCozinhaMain {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
+        CozinhaRepository cozinhaRepository = applicationContext.getBean(CozinhaRepository.class);
 
-        List<Cozinha> todasCozinhas = cozinhas.listar();
+        Cozinha cozinha = cozinhaRepository.buscar(5L);
 
-        for (Cozinha cozinha : todasCozinhas) {
-            System.out.println(cozinha.getNome());
-        }
+        System.out.println(cozinha.getNome());
+
 
     }
 }

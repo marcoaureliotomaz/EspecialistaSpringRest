@@ -7,23 +7,23 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.util.List;
-
-public class ConsultaCozinhaMain {
-
+public class AlteracaoCozinhaMain {
     public static void main(String[] args) {
-
         ConfigurableApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApiApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
+        CozinhaRepository cozinhaRepository = applicationContext.getBean(CozinhaRepository.class);
 
-        List<Cozinha> todasCozinhas = cozinhas.listar();
+        Cozinha cozinha = new Cozinha();
+        cozinha.setId(1L);
+        cozinha.setNome("Canadense");
 
-        for (Cozinha cozinha : todasCozinhas) {
-            System.out.println(cozinha.getNome());
-        }
+        cozinhaRepository.salvar(cozinha);
+
+
+
+
 
     }
 }
