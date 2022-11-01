@@ -18,5 +18,23 @@ insert into algafood.permissao (id, descricao) values (2,'Insert');
 insert into algafood.permissao (id, descricao) values (3,'Update');
 insert into algafood.permissao (id, descricao) values (4,'Delete');
 
+insert into algafood.estado (id, nome) values (1,'CE');
+insert into algafood.estado (id, nome) values (2,'SP');
+insert into algafood.estado (id, nome) values (3,'RN');
+insert into algafood.estado (id, nome) values (4,'ES');
+insert into algafood.estado (id, nome) values (5,'PB');
+insert into algafood.estado (id, nome) values (6,'PE');
+
+insert into algafood.cidade (id, nome, estado_id) values (1,'Campos Sales',1);
+insert into algafood.cidade (id, nome, estado_id) values (2,'Santos',2);
+insert into algafood.cidade (id, nome, estado_id) values (3,'Mossoró',3);
+insert into algafood.cidade (id, nome, estado_id) values (4,'Natal',3);
+insert into algafood.cidade (id, nome, estado_id) values (5,'São Mateus',4);
+insert into algafood.cidade (id, nome, estado_id) values (6,'Campina Grande',5);
+insert into algafood.cidade (id, nome, estado_id) values (7,'Recife',6);
+
+
+
+
 
 
