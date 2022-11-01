@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cidade {
 
     @Id
