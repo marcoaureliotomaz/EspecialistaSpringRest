@@ -16,12 +16,12 @@ public class CadastroCidadeService {
     CidadeRepository cidadeRepository;
 
     public Cidade salvar(Cidade cidade){
-        return cidadeRepository.salvar(cidade);
+        return cidadeRepository.save(cidade);
     }
 
     public void excluir(Long id){
         try {
-            cidadeRepository.remover(id);
+            cidadeRepository.deleteById(id);
         }catch (EmptyResultDataAccessException e) {
             throw new EntidadeNaoEncontradaException(String.format("Não existe cadastro de cidade com código", id));
 
