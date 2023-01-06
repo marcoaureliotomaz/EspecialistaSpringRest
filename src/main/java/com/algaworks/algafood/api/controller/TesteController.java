@@ -42,4 +42,9 @@ public class TesteController {
     public List <Restaurante> restaurantesNomeCozinha(String nome, Long cozinhaId){
         return restauranteRepository.findByNomeContainingAndCozinhaId(nome, cozinhaId);
     }
+
+    @GetMapping("restaurantes/por-nome-e-frete")
+    public List <Restaurante> restaurantesNomeFrete(String nome, BigDecimal taxaInicial, BigDecimal taxaFinal){
+        return restauranteRepository.find(nome, taxaInicial, taxaFinal);
+    }
 }
