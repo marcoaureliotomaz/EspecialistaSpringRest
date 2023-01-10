@@ -78,4 +78,9 @@ public class CozinhaController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/primeiro")
+    public Optional<Cozinha> primeiro() {
+        return cozinhaRepository.buscarPrimeiro();
+    }
 }
