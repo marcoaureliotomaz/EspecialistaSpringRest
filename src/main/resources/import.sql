@@ -7,10 +7,10 @@ insert into algafood.tab_cozinhas (id, nom_cozinha) values (5,'Brasileira');
 insert into algafood.formapagamento (id, descricao) values (1,'DINHEIRO');
 insert into algafood.formapagamento (id, descricao) values (2,'CARTÃO');
 
-insert into algafood.restaurante (nome, taxa_frete, cozinha_id, formapagamento_id) values ('Tchê', 5,1,2);
-insert into algafood.restaurante (nome, taxa_frete, cozinha_id, formapagamento_id) values ('Braseiro',4, 2,2);
-insert into algafood.restaurante (nome, taxa_frete, cozinha_id, formapagamento_id) values ('Gauchinha',3, 3,1);
-insert into algafood.restaurante (nome, taxa_frete, cozinha_id, formapagamento_id) values ('Gauchinha',3, 5,2);
+insert into algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (1,'Tchê', 5,1);
+insert into algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (2,'Braseiro',4, 2);
+insert into algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (3,'Gauchinha',3, 3);
+insert into algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (4,'Germanos',3, 5);
 
 
 insert into algafood.permissao (id, descricao) values (1,'Consulta');
@@ -33,6 +33,11 @@ insert into algafood.cidade (id, nome, estado_id) values (5,'São Mateus',4);
 insert into algafood.cidade (id, nome, estado_id) values (6,'Campina Grande',5);
 insert into algafood.cidade (id, nome, estado_id) values (7,'Recife',6);
 
+insert into algafood.restaurante_forma_pagamento  values (1,1);
+insert into algafood.restaurante_forma_pagamento  values (1,2);
+insert into algafood.restaurante_forma_pagamento  values (2,2);
+insert into algafood.restaurante_forma_pagamento  values (3,2);
+insert into algafood.restaurante_forma_pagamento  values (4,2);
 
 
 

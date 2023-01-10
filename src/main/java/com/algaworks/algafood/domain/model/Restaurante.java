@@ -1,11 +1,12 @@
 package com.algaworks.algafood.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode
@@ -22,14 +23,15 @@ public class Restaurante {
     @Column(name = "taxa_frete")
     private BigDecimal taxaFrete;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "cozinha_id")
     private Cozinha cozinha;
 
-    @ManyToOne
-    @JoinColumn(name = "formapagamento_id")
-    private FormaPagamento formapagamento;
+    @ManyToMany
+    @JoinTable(name = "restaurante_forma_pagamento",
+                        joinColumns = @JoinColumn(name = "restaurante_id"),
+                        inverseJoinColumns =  @JoinColumn(name ="forma_pagamento_id"))
+    private List<FormaPagamento> formaspagamento = new ArrayList<>();
 
 
 }
