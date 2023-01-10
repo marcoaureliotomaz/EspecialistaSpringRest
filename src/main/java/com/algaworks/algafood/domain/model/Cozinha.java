@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -23,5 +25,8 @@ public class Cozinha {
     @Column(name = "nom_cozinha", length = 30, nullable = false)
     private String nome;
 
+    //@JsonIgnore
+    @OneToMany(mappedBy = "cozinha")
+    private List<Restaurante> restaurante = new ArrayList<>();
 
 }
