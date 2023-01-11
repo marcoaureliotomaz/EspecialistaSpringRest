@@ -1,5 +1,6 @@
 package com.algaworks.algafood.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,7 +26,7 @@ public class Cozinha {
     @Column(name = "nom_cozinha", length = 30, nullable = false)
     private String nome;
 
-    //@JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "cozinha")
     private List<Restaurante> restaurante = new ArrayList<>();
 
