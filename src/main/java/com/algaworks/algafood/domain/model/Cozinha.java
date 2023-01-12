@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "tab_cozinhas")
+@Table(name = "cozinha")
 public class Cozinha {
 
     @EqualsAndHashCode.Include
@@ -23,7 +23,7 @@ public class Cozinha {
 
     //@JsonIgnore
     @JsonProperty("titulo")
-    @Column(name = "nom_cozinha", length = 30, nullable = false)
+    @Column(name = "nome", length = 30, nullable = false)
     private String nome;
 
     @JsonIgnore
